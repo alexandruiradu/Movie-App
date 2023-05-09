@@ -1,0 +1,35 @@
+<p>create-update-movie works!</p>
+<div class="div-page">
+  <mat-card class="card-form">
+    <mat-card-content>
+      <p class="lbl-title mat-primary">Create/Update a Movie</p>
+      <div class="input-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Title</mat-label>
+          <input matInput placeholder="title" [formControl]="title" required>
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Description</mat-label>
+          <input matInput placeholder="description" [formControl]="description" required>
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Year</mat-label>
+          <input matInput placeholder="year" [formControl]="year" required>
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Director</mat-label>
+          <input matInput placeholder="director" [formControl]="director" required>
+        </mat-form-field>
+      </div>
+      <div class="div-buttons">
+        <button mat-raised-button color="primary">Save</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

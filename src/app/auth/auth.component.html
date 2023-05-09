@@ -1,0 +1,69 @@
+<div [ngSwitch]="viewType" class="div-page">
+  <mat-card *ngSwitchCase="'login'" class="card-form">
+    <mat-card-content>
+      <p class="lbl-title mat-primary" >Welcome to Movie App!</p>
+      <div class="input-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="pat@example.com" [formControl]="email" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="div-buttons">
+        <button mat-raised-button color="primary" (click)="onLogIn()">Log In</button>
+        <button mat-button color="primary" (click)="onChangeViewType('signup')">Create an account?</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngSwitchCase="'signup'" class="card-form">
+    <mat-card-content>
+      <p class="lbl-title mat-primary" >Welcome to Movie App!</p>
+      <div class="input-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your username</mat-label>
+          <input matInput placeholder="username" [formControl]="username" required>
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="pat@example.com" [formControl]="email" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Re-enter your password</mat-label>
+          <input matInput [type]="hide2 ? 'password' : 'text'" [formControl]="reTypePassword">
+          <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
+            <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="div-buttons">
+        <button mat-raised-button color="primary" (click)="onSignUp()">Sign Up</button>
+        <button mat-button color="primary" (click)="onChangeViewType('login')">Back to Log In</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+</div>
