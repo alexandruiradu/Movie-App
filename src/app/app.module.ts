@@ -11,13 +11,16 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateUpdateMovieComponent } from './create-update-movie/create-update-movie.component';
+import { MoviePreviewComponent } from './dashboard/movie-preview/movie-preview.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
     DashboardComponent,
-    CreateUpdateMovieComponent
+    CreateUpdateMovieComponent,
+    MoviePreviewComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { CreateUpdateMovieComponent } from './create-update-movie/create-update-
     MatInputModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
