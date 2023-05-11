@@ -6,6 +6,16 @@
       <p>description:{{movie.description}}</p>
       <p>year:{{movie.year}}</p>
       <p>director:{{movie.director}}</p>
+      <div class="example-button-container">
+        <button mat-mini-fab color="primary" (click)="onDelete()">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+      <div class="example-button-container">
+        <button mat-mini-fab color="accent" (click)="onEdit()">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
     </div>
   </mat-card-content>
 </mat-card>
