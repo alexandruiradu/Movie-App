@@ -1,21 +1,22 @@
-
-<mat-card>
+<mat-card class="card-movie">
   <mat-card-content>
     <div>
-      <p>title:{{movie.title}}</p>
-      <p>description:{{movie.description}}</p>
-      <p>year:{{movie.year}}</p>
-      <p>director:{{movie.director}}</p>
-      <div class="example-button-container">
-        <button mat-mini-fab color="primary" (click)="onDelete()">
-          <mat-icon>delete</mat-icon>
-        </button>
+      <p class="lbl-title">title:{{movie.title | titlecase }}</p>
+      <p class="lbl-description">description:{{movie.description}}</p>
+      <p class="lbl-year">year:{{movie.year}}</p>
+      <p class="lbl-director">director:{{movie.director | uppercase}}</p>
+
+      <div style="display: flex">
+        <div class="example-button-container">
+          <button mat-mini-fab color="primary" style="margin-right: 16px" (click)="onDelete()">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button mat-mini-fab color="accent" (click)="onEdit()">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
       </div>
-      <div class="example-button-container">
-        <button mat-mini-fab color="accent" (click)="onEdit()">
-          <mat-icon>edit</mat-icon>
-        </button>
-      </div>
+
     </div>
   </mat-card-content>
 </mat-card>

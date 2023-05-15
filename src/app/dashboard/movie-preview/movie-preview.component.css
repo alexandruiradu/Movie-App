@@ -1,5 +1,31 @@
 .example-button-container {
-  display: flex;
-  justify-content: center;
-  width: 120px;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.card-movie {
+  width: 300px;
+  margin-bottom: 16px;
+  margin-right: 16px;
+}
+
+.lbl-title {
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+}
+
+.lbl-description {
+  font-size: 14px;
+  color: grey;
+  font-style: italic;
+}
+
+.lbl-director {
+  font-size: 14px;
+  font-style: oblique;
+}
+
+.lbl-year {
+  font-weight: bold;
 }

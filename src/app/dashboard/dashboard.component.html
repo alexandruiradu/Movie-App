@@ -1,8 +1,12 @@
-<p>dashboard works!</p>
-<app-create-update-movie (createMovie)="onRefresh()" (updateMovie)="onRefresh()" [movie]="selectedMovie"></app-create-update-movie>
+<div style="display: flex">
+  <div class="div-container">
+    <app-create-update-movie (createMovie)="onRefresh()" (updateMovie)="onRefresh()"
+                             [movie]="selectedMovie"></app-create-update-movie>
+  </div>
 
 
-<div style="background-color: black;width: 100%">
-  <app-movie-preview *ngFor="let movieItem of movieList" [movie]="movieItem"
-                     (deleteMovie)="onRefresh()" (editMovie)="onEdit($event)"></app-movie-preview>
+  <div class="div-cards">
+    <app-movie-preview *ngFor="let movieItem of movieList" [movie]="movieItem"
+                       (deleteMovie)="onRefresh()" (editMovie)="onEdit($event)"></app-movie-preview>
+  </div>
 </div>

@@ -42,18 +42,23 @@ export class CreateUpdateMovieComponent implements OnChanges {
       director: this.director.getRawValue()!
     }
     console.log(movieItem);
-    if (movieItem.id == "") {
-      this.movieService.addMovie(movieItem).subscribe((response: any) => {
-        console.log(response);
-        this.createMovie.emit();
-      });
+    if (movieItem.title != "" && movieItem.description != "" && movieItem.director != "" && movieItem.year != "") {
+      if (movieItem.id == "") {
+        this.movieService.addMovie(movieItem).subscribe((response: any) => {
+          console.log(response);
+          this.onClearForm();
+          this.createMovie.emit();
+        });
+      } else {
+        this.movieService.updateMovie(movieItem).subscribe((response: any) => {
+          console.log(response);
+          this.onClearForm();
+          this.updateMovie.emit();
+        });
+      }
     } else {
-      this.movieService.updateMovie(movieItem).subscribe((response: any) => {
-        console.log(response);
-        this.updateMovie.emit();
-      });
+      alert("Datele sunt invalide!");
     }
-
   }
 
   onClearForm(): void {

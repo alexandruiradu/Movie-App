@@ -1,0 +1,8 @@
+.div-container {
+  width: 500px;
+}
+
+.div-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
